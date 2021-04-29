@@ -1,13 +1,23 @@
 import React from 'react';
 
-const Results = ({results}) => {
+const Results = ({search, results}) => {
     return (
         <div>
+        { search ?
+        <div>
+        <p><strong>Results for "{search}"</strong></p>
            <ul>
-           {results?.map(movie => ( 
-              <li >{movie}</li>
+           {results[0]?.map(movie => ( 
+              <li>{movie.Title}({movie.Year})
+              <button>Nominate</button>
+              </li>
+              
            ))}
-           </ul>
+           
+           </ul> 
+           </div>
+           : null
+        }
         </div>
     );
 }
