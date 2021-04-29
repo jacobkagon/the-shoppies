@@ -11,15 +11,15 @@ function App() {
 
   useEffect(() => {
     axios.get(`https://omdbapi.com/?s=${search}&apikey=${process.env.REACT_APP_API_KEY}`)
-    .then(results => setResults(results.data.Search))
+    .then(response => console.log(response.data.Search))
     .catch((error) => console.log(error))
-  }, [])
+  })
  
 
   return (
     <div className="App">
       <Search search={search} setSearch={setSearch}/>
-      <Results results={results}/>
+      {/* <Results results={results}/> */}
       <Nominations/>
     </div>
   );

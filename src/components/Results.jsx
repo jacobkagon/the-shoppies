@@ -4,8 +4,8 @@ const Results = ({results}) => {
     return (
         <div>
            <ul>
-           {results.map(movie => ( 
-              <li>{movie}</li>
+           {results?.map(movie => ( 
+              <li >{movie}</li>
            ))}
            </ul>
         </div>
