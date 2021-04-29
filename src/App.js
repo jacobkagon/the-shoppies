@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react'
+import Nominations from "./components/Nominations"
+import Results from "./components/Results"
+import Search from "./components/Search"
+import axios from "axios"
 
 function App() {
+
+  const [search, setSearch] = useState("")
+  const [results, setResults] = useState([])
+
+  useEffect(() => {
+    axios.get(`https://omdbapi.com/?s=${search}&apikey=${process.env.REACT_APP_API_KEY}`)
+    .then(results => setResults(results.data.Search))
+    .catch((error) => console.log(error))
+  }, [])
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search search={search} setSearch={setSearch}/>
+      <Results results={results}/>
+      <Nominations/>
     </div>
   );
 }
