@@ -1,15 +1,17 @@
 import React from 'react';
 
-const Results = ({search, results}) => {
+const Results = ({search, results, setNominations, nominations}) => {
     return (
         <div>
         { search ?
         <div>
-        <p><strong>Results for "{search}"</strong></p>
+        <h4>Results for "{search}"</h4>
            <ul>
            {results[0]?.map(movie => ( 
-              <li>{movie.Title}({movie.Year})
-              <button>Nominate</button>
+              <li>{movie.Title} ({movie.Year})
+              { nominations.includes(movie)?<button>Nominate</button>
+              : <button onClick={() => setNominations([...nominations, movie])}>Nominate</button>
+              }
               </li>
               
            ))}

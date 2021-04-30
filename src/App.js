@@ -7,9 +7,9 @@ import axios from "axios";
 function App() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
+  const [nominations, setNominations] = useState([]);
 
   useEffect(() => {
- 
     axios
       .get(
         `https://omdbapi.com/?s=${search}&apikey=${process.env.REACT_APP_API_KEY}`
@@ -20,13 +20,9 @@ function App() {
 
   return (
     <div className="App">
-      <Search
-        search={search}
-        setSearch={setSearch}
-        
-      />
-      <Results search={search} results={results} />
-      <Nominations />
+      <Search search={search} setSearch={setSearch} />
+      <Results nominations={nominations} search={search} results={results} setNominations={setNominations} />
+      <Nominations nominations={nominations} setNominations={setNominations}/>
     </div>
   );
 }
