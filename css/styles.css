@@ -2,31 +2,3 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-h1 {
-    @apply text-3xl font-bold md:text-5xl font-primary;
-  }
-
-  h2 {
-    @apply text-2xl font-bold md:text-4xl font-primary;
-  }
-
-  h3 {
-    @apply text-xl font-bold md:text-3xl font-primary;
-  }
-
-  h4 {
-    @apply text-lg font-bold font-primary;
-  }
-
-  body {
-    @apply text-sm font-primary md:text-base;
-  }
-
-  .layout {
-    /* 750px */
-    /* max-width: 43.75rem; */
-
-    /* 1100px */
-    max-width: 68.75rem;
-    @apply w-11/12 mx-auto;
-  }

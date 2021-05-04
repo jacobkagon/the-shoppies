@@ -9,7 +9,7 @@ const Nominations = ({ nominations, setNominations }) => {
   return (
     <div>
     <h4>Nominations</h4>
-    {nominations.length >=5 ? <h5>Nomination Limit Reached</h5> : null}
+    {nominations.length >=5 ? <h5 className="error">Nomination Limit Reached</h5> : null}
       <ul>
         {nominations?.map((nom) => (
           <li>

@@ -25,8 +25,10 @@ function App() {
   return (
     <div className="App">
       <Search search={search} setSearch={setSearch} />
+      <grid>
       <Results nominations={nominations} search={search} results={results} setNominations={setNominations} />
       <Nominations nominations={nominations} setNominations={setNominations}/>
+      </grid>
     </div>
   );
 }
