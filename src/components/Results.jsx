@@ -9,11 +9,11 @@ const Results = ({search, results, setNominations, nominations}) => {
            <ul>
            {results[0]?.map(movie => ( 
               <li>{movie.Title} ({movie.Year})
-              { nominations.includes(movie)?<button>Nominate</button>
+              { nominations.includes(movie) || nominations.length === 5?<button>Already Nominated</button>
               : <button onClick={() => setNominations([...nominations, movie])}>Nominate</button>
               }
+             
               </li>
-              
            ))}
            
            </ul> 

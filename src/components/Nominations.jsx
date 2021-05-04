@@ -1,4 +1,5 @@
 import React from "react";
+import "./Nominations.module.css"
 
 const Nominations = ({ nominations, setNominations }) => {
   const removeNom = (nom) => {
@@ -8,14 +9,16 @@ const Nominations = ({ nominations, setNominations }) => {
   return (
     <div>
     <h4>Nominations</h4>
+    {nominations.length >=5 ? <h5>Nomination Limit Reached</h5> : null}
       <ul>
         {nominations?.map((nom) => (
           <li>
             {nom.Title} ({nom.Year})
-            <button onClick={() => removeNom(nom)}>Remove</button>
+            <button className="btn" onClick={() => removeNom(nom)}>Remove</button>
           </li>
         ))}
       </ul>
+  
     </div>
   );
 };
