@@ -2,7 +2,7 @@ import React from "react";
 
 const Search = ({ search, setSearch }) => {
   return (
-    <div>
+    <div className="justify-center">
     <form>
       <input
         value={search}
