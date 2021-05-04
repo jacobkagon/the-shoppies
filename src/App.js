@@ -3,7 +3,8 @@ import Nominations from "./components/Nominations";
 import Results from "./components/Results";
 import Search from "./components/Search";
 import axios from "axios";
-import "tailwindcss/tailwind.css"
+import "tailwindcss/tailwind.css";
+import "./App.css"
 
 function App() {
   const [search, setSearch] = useState("");
@@ -19,16 +20,23 @@ function App() {
       .catch((error) => console.log(error));
   }, [search]);
 
-
- 
-
   return (
     <div className="App">
       <Search search={search} setSearch={setSearch} />
-      <grid>
-      <Results nominations={nominations} search={search} results={results} setNominations={setNominations} />
-      <Nominations nominations={nominations} setNominations={setNominations}/>
-      </grid>
+      <div className="row">
+        <div className="card">
+          <Results
+            nominations={nominations}
+            search={search}
+            results={results}
+            setNominations={setNominations}
+          />
+        </div>
+        <Nominations
+          nominations={nominations}
+          setNominations={setNominations}
+        />
+      </div>
     </div>
   );
 }
