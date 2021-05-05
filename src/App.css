@@ -18,7 +18,7 @@
 }
 
 .row {
-  margin: 10%;
+  margin: 5%;
   display: flex;
 }
 .container {
@@ -38,8 +38,6 @@
   margin: 1rem;
 }
 
-
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -51,4 +49,9 @@
   color: white;
 }
 
-
+@media (min-width: 480px) {
+  .row {
+    display: row;
+    flex-direction: row;
+  }
+}
