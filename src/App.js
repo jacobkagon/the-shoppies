@@ -32,12 +32,14 @@ function App() {
             setNominations={setNominations}
           />
         </div>
+        
         <div className="card">
           <Nominations
             nominations={nominations}
             setNominations={setNominations}
           />
         </div>
+     
       </div>
     </div>
   );

@@ -4,9 +4,10 @@ import "./Results.module.css"
 const Results = ({search, results, setNominations, nominations}) => {
     return (
         <div>
+        <h4>Results for "{search}"</h4>
         { search ?
         <div>
-        <h4>Results for "{search}"</h4>
+        
            <ul>
            {results[0]?.map(movie => ( 
               <li>{movie.Title} ({movie.Year})
