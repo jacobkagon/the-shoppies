@@ -4,7 +4,7 @@ import Results from "./components/Results";
 import Search from "./components/Search";
 import axios from "axios";
 import "tailwindcss/tailwind.css";
-import "./App.css"
+import "./App.css";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -21,7 +21,7 @@ function App() {
   }, [search]);
 
   return (
-    <div className="App">
+    <div className="main">
       <Search search={search} setSearch={setSearch} />
       <div className="row">
         <div className="card">
@@ -32,10 +32,12 @@ function App() {
             setNominations={setNominations}
           />
         </div>
-        <Nominations
-          nominations={nominations}
-          setNominations={setNominations}
-        />
+        <div className="card">
+          <Nominations
+            nominations={nominations}
+            setNominations={setNominations}
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Results.module.css"
 
 const Results = ({search, results, setNominations, nominations}) => {
     return (
@@ -9,7 +10,7 @@ const Results = ({search, results, setNominations, nominations}) => {
            <ul>
            {results[0]?.map(movie => ( 
               <li>{movie.Title} ({movie.Year})
-              { nominations.includes(movie) || nominations.length === 5?<button className="btn">Already Nominated</button>
+              { nominations.includes(movie) || nominations.length === 5?<button className="button-disabled">Nominate</button>
               : <button onClick={() => setNominations([...nominations, movie])}>Nominate</button>
               }
              
