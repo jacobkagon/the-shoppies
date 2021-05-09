@@ -1,4 +1,6 @@
-.button-disabled {
-    background: #F5F5F5;
-    color : red;
-}
+.disabled {
+     border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+  }
+
