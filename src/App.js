@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Nominations from "./components/Nominations";
-import Results from "./components/Results";
-import Search from "./components/Search";
+import Nominations from "./components/Nominations/Nominations";
+import Results from "./components/Results/Results";
+import Search from "./components/Search/Search";
 import axios from "axios";
-import "tailwindcss/tailwind.css";
-import "./App.css";
+import styles from "./App.module.css";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -21,10 +20,10 @@ function App() {
   }, [search]);
 
   return (
-    <div className="main">
+    <div className={styles.main}>
       <Search search={search} setSearch={setSearch} />
-      <div className="row">
-        <div className="card">
+      <div className={styles.row}>
+        <div className={styles.card}>
           <Results
             nominations={nominations}
             search={search}
@@ -32,14 +31,13 @@ function App() {
             setNominations={setNominations}
           />
         </div>
-        
-        <div className="card">
+
+        <div className={styles.card}>
           <Nominations
             nominations={nominations}
             setNominations={setNominations}
           />
         </div>
-     
       </div>
     </div>
   );
